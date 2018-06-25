@@ -8,6 +8,8 @@ Jedox Docker Image - Centos
 
 ## Configuration
 
+### Docker Image
+
 * Centos 7 Docker Image (library/centos:7)
 
 By default, Jedox Web is installed with the following settings:
@@ -29,6 +31,52 @@ OLAP Server).
 - The Jedox Integrator Web Client communicates with the Jedox Integrator Server on port 7775.
 
 - Tomcat Service can use 1024 MB memory maximum by default.
+
+### config.inf
+
+Example for setup script “config.inf”:
+
+[custom] AllUsers=True
+- customInstall=true
+- AdvancedMode=True
+- chosenOLAPM=true
+- chosenODBO=false
+- chosenSVS=true
+- chosenSAP=false
+- chosenETL=true
+- chosenPaloWeb=true
+- chosenExcelAddin=true
+- chosenOfficeAddin=true
+- chosenSandbox=false
+- chosenPaloSuiteLog=C:\Program Files (x86)\Jedox\Jedox Suite\log
+- chosenPaloServerData=C:\Program Files (x86)\Jedox\Jedox Suite\olap\data
+- chosenStorage=C:\Program Files (x86)\Jedox\Jedox Suite\storage
+- chosenETLdata=C:\Program Files (x86)\Jedox\Jedox Suite\tomcat\webapps\etlserver\data
+- tomcatInterface=127.0.0.1
+- tomcatPort=7775
+- apacheInterface=
+- apachePort=80
+- olapInterface=
+- olapPort=7777
+- odboInterface=127.0.0.1
+- vodboPort=4242
+- chosenUpdates=true
+- UpdateDemoContent=True
+- apacheSecret=
+- ShowInfoBox=True
+- [Setup] Lang=de
+- Dir=C:\Jedox
+- Group=Jedox
+- NoIcons=0
+- Tasks=
+
+For automatic setup repetition, you can record the setup execution e.g. with the following command:
+C:\Downloads\Jedox_Setup_version.exe /SAVEINF=”C:\config.inf”
+If script name config.inf is given without absolute path, config.inf will be saved in the directory where the
+setup file is located. Note that when recording a script for unattended installations, the advanced setup
+options are always shown.
+
+C:\Downloads\Jedox_Setup_version.exe /LOADINF=”C:\config.inf”
 
 ## Run
 
