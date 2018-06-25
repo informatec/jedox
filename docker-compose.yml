@@ -9,6 +9,6 @@ services:
       - 7777
       - 7775
     volumes:
-      - ./share:/usr/share
-      # - ./work:/usr/src/work
+      - ./share:/share
+    #  - ./work:/usr/src/jedox
     # restart: always

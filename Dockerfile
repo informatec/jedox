@@ -16,9 +16,12 @@ RUN yum update \
 # \
 # && rm -rf /var/lib/apt/lists/*
 
+# adding the startup script
+COPY jedox.sh ./
+RUN chmod +x ./jedox.sh
+
 # add folder share
-# VOLUME "./share"
-# VOLUME "./work"
+VOLUME "/share"
 
 # change to user root
 USER root
@@ -48,4 +51,4 @@ WORKDIR /
 # add entrypoint
 # ENTRYPOINT /opt/jedox/ps/jedox-suite.sh start && /bin/sh
 
-CMD ["/usr/src/work/jedox.sh"]
+# CMD ["/usr/src/work/jedox.sh"]

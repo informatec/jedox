@@ -10,6 +10,26 @@ Jedox Docker Image - Centos
 
 * Centos 7 Docker Image (library/centos:7)
 
+By default, Jedox Web is installed with the following settings:
+
+- The Apache Web server component listens only to the localhost-Interface (127.0.0.1), Port 80
+
+- The Apache Web Server communicates with the Core Server on port 8193.
+
+- The Jedox OLAP Server listens only to the localhost-interface (127.0.0.1), Port 7777. This port is
+also used by the Apache Web-Server and the Core Server to store the internal configuration data on
+the Jedox OLAP Server.
+
+- The Apache Web Server communicates with the Tomcat Server (Jedox Integrator, Jedox Analyzer
+and Task Manager) on Port 8010.
+
+- The admin account has the password "admin" (for both: for Jedox Web as well as for the Jedox
+OLAP Server).
+
+- The Jedox Integrator Web Client communicates with the Jedox Integrator Server on port 7775.
+
+- Tomcat Service can use 1024 MB memory maximum by default.
+
 ## Run
 
 ### Running and accessing on AWC EC2
