@@ -4,13 +4,11 @@ services:
   jedox:
     build:
       context: .
-    environment:
-      - APP_NAME=jedox
     ports:
-      - 8020:80
+      - 80
       - 7777
       - 7775
     volumes:
-      - ./share:/share
-      - ./work:/usr/src/work
-    restart: always
+      - ./share:/usr/share
+      # - ./work:/usr/src/work
+    # restart: always

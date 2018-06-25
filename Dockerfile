@@ -17,7 +17,8 @@ RUN yum update \
 # && rm -rf /var/lib/apt/lists/*
 
 # add folder share
-VOLUME "/share"
+# VOLUME "./share"
+# VOLUME "./work"
 
 # change to user root
 USER root
@@ -45,5 +46,6 @@ RUN rm -rfv /tmp/*
 WORKDIR /
 
 # add entrypoint
-# ENTRYPOINT /opt/jedox/ps/jedox-suite.sh start && /bin/bash
+# ENTRYPOINT /opt/jedox/ps/jedox-suite.sh start && /bin/sh
+
 CMD ["/usr/src/work/jedox.sh"]
