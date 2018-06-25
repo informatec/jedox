@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  jedox:
+    build:
+      context: .
+    environment:
+      - APP_NAME=jedox
+    ports:
+      - 8020:80
+      - 7777
+      - 7775
+    volumes:
+      - ./share:/share
+    restart: always
