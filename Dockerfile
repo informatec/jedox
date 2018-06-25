@@ -46,4 +46,4 @@ WORKDIR /
 
 # add entrypoint
 # ENTRYPOINT /opt/jedox/ps/jedox-suite.sh start && /bin/bash
-CMD ["./jedox.sh"]
+CMD ["/usr/src/work/jedox.sh"]
